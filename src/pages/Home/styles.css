@@ -1,0 +1,392 @@
+.container-home {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+    background: linear-gradient(90.23deg, #05EDE3 0.02%, #645FFB 99.63%);
+    min-height: 100vh;
+    width: 100%;
+}
+
+.position-absolute {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+header {
+    display: flex;
+    width: 88%;
+    height: 12rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.image-logo {
+    height: 5rem;
+    width: auto;
+    top: 4rem;
+}
+
+.image-logout {
+    cursor: pointer;
+}
+
+.mini-menu-mobile {
+    display: none;
+}
+
+.user-current {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.log-out {
+    cursor: pointer;
+}
+
+.profile-name {
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: #fff;
+    margin-left: .8rem;
+    margin-right: 1.2rem;
+}
+
+.container-content-home {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: calc(100vh - 12rem);
+    background-color: #fff;
+    border-radius: 6rem 6rem 0 0;
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 5rem;
+}
+
+.container-table-abstract {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 100%;
+    justify-content: center;
+    width: 88%;
+}
+
+.card-abstract-top {
+    display: none;
+    flex-direction: column;
+    margin-top: 10rem;
+    font-family: 'Rubik', sans-serif;
+}
+
+.filter-table {
+    width: 100%;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 33rem;
+    border-radius: 1rem;
+}
+
+#btn-filter {
+    all: unset;
+    display: flex;
+    background-color: #FAFAFA;
+    border-radius: .8rem;
+    font-weight: 700;
+    align-items: center;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    padding: .8rem 1.5rem;
+    box-shadow: 0px .2rem 1.1rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#btn-filter img {
+    height: 1.6rem;
+    width: auto;
+    margin-right: .5rem;
+}
+
+#btn-show-resume {
+    display: none;
+}
+
+#show-resume-add-register {
+    display: none;
+}
+
+.container-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-top: 10rem;
+}
+
+.message-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.1rem;
+    height: auto;
+    width: 100%;
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #FA8C10;
+}
+
+.card-abstract {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+    font-family: 'Rubik', sans-serif;
+}
+
+.btn-pdf {
+    all: unset;
+    display: flex;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    background-color: #FAFAFA;
+    color: rgba(233, 4, 4, 0.902);
+    text-align: center;
+    padding: .5rem .8rem;
+    border-radius: .8rem;
+    border: .23rem solid rgba(233, 4, 4, 0.902);
+    box-shadow: 0 .2rem 1.1rem rgba(0, 0, 0, 0.15);
+    transition: all;
+}
+
+.btn-pdf:hover img {
+    transition-duration: .4s;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(48deg) brightness(108%) contrast(103%);
+}
+
+.btn-pdf:hover {
+    transition-duration: .4s;
+    color: #fff;
+    background-color: rgba(204, 0, 0, 0.8);
+}
+
+@media (max-width: 1300px) {
+    .container-table-abstract {
+        justify-content: space-between;
+    }
+
+    .container-table {
+        border-radius: 10px;
+        width: 68%;
+    }
+
+    .card-abstract {
+        width: 30%;
+    }
+}
+
+@media (max-width: 960px) {
+    .filter-table {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #btn-show-resume {
+        all: unset;
+        display: flex;
+        color: #FAFAFA;
+        font-family: 'Rubik', sans-serif;
+        background-color: #3A9FF1;
+        border-radius: 1rem;
+        font-weight: 700;
+        align-items: center;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        padding: .9rem 1.6rem;
+        box-shadow: 0px .2rem 1.1rem rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        position: absolute;
+        left: 12rem;
+        border-radius: .8rem;
+    }
+
+    #show-resume-add-register {
+        all: unset;
+        display: flex;
+        font-family: 'Rubik', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        text-align: center;
+        color: #fff;
+        background-color: #7978D9;
+        box-shadow: 0px .2rem 1.1rem rgba(0, 0, 0, 0.1);
+        border-radius: .8rem;
+        position: absolute;
+        left: 23rem;
+        padding: .8rem 1.6rem;
+        cursor: pointer;
+    }
+
+    .container-table {
+        width: 100%;
+    }
+
+    .card-abstract {
+        display: none;
+    }
+
+    .show-card-abstract {
+        font-family: 'Rubik', sans-serif;
+        justify-content: flex-end;
+        width: 100%;
+        height: auto;
+        background-color: #FAFAFA;
+        box-shadow: 0 .2rem 1.1rem rgba(0, 0, 0, 0.1);
+        border-radius: 1rem;
+        margin-bottom: 3rem;
+        padding: 3rem 3rem 1.8rem;
+    }
+
+    .show-card-abstract button {
+        display: none;
+    }
+}
+
+@media (max-width: 540px) {
+    header {
+        display: flex;
+        width: 90%;
+        align-items: center;
+        justify-content: space-between;
+        margin: 3.3rem 0;
+    }
+
+    .user-current {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+
+    .mini-menu {
+        display: flex;
+        position: relative;
+        gap: 4rem;
+    }
+
+    .edit-user {
+        height: 3.9rem;
+        position: absolute;
+        width: auto;
+
+        transition-property: right;
+        transition-duration: 0.4s;
+    }
+
+    .image-logo {
+        height: 5rem;
+        width: auto;
+        top: 4rem;
+    }
+
+    .image-logout {
+        display: none;
+        cursor: pointer;
+    }
+
+    .log-out {
+        display: none;
+        height: 4rem;
+        width: auto;
+    }
+
+    .mini-menu-mobile {
+        display: block;
+    }
+
+    .profile-name {
+        display: none;
+    }
+
+    .container-table-abstract {
+        flex-direction: column;
+    }
+
+    .filter-table {
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+        width: 100%;
+        margin-left: .1rem;
+        box-shadow: 0px .2rem 1.1rem rgba(0, 0, 0, 0.1);
+    }
+
+    #btn-filter {
+        justify-content: center;
+        align-items: center;
+        font-size: 1.7rem;
+        text-align: center;
+        width: 100%;
+        padding: 1.3rem 0;
+    }
+
+    .filter-table button img {
+        height: 2rem;
+        width: auto;
+        margin-right: 1rem;
+    }
+
+    #btn-show-resume {
+        display: none;
+    }
+
+    #show-resume-add-register {
+        display: none;
+    }
+
+    .container-content-home {
+        padding-bottom: 8rem;
+        border-radius: 2.6rem 2.6rem 0 0;
+    }
+
+    .card-abstract-top {
+        display: flex;
+        width: 87%;
+        margin: 4rem 0 2rem;
+    }
+
+    .container-table {
+        margin-top: 5rem;
+        width: 100%;
+    }
+
+    .card-abstract {
+        display: none;
+    }
+
+    .btn-pdf {
+        display: none;
+    }
+}

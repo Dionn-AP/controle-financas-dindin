@@ -1,0 +1,191 @@
+.card-detail {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    height: auto;
+    padding: 3rem 3.5rem;
+    width: 40rem;
+    background-color: #ffffff;
+    font-family: 'Rubik', sans-serif;
+    border-radius: 1.5rem;
+}
+
+.btn-close-detail {
+    position: absolute;
+    height: 3.2rem;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.card-detail {
+    padding: 3.7rem 2rem 1rem;
+    width: 55rem;
+}
+
+.card-detail h1 {
+    font-size: 2.7rem;
+    margin-bottom: 4.2rem;
+}
+
+.text-card-detail {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.detail-date, .detail-categories {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+}
+
+.date, .value {
+    text-align: right;
+}
+
+.value, .get-date, .categories {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-description {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
+.legend-values {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0;
+}
+
+.legend-values span {
+    opacity: 0.7;
+}
+
+.value-received, .value-exit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.value-received div, .value-exit div  {
+    height: 1.3rem;
+    width: 2.5rem;
+    border-radius: .2rem;
+    margin: 0 1.3rem 1.7rem 0;
+}
+
+.value-received div {
+    background-color: #7B61FF;
+}
+
+.value-exit div {
+    background-color: #FA8C10;
+}
+
+.card-detail span {
+    font-size: 1.8rem;
+    margin-bottom: 1.7rem;
+}
+
+@media (max-width: 540px) {
+
+    .card-detail {
+        padding: 3.7rem 2rem 1rem;
+        width: 98%;
+    }
+
+    .card-detail h1 {
+        font-size: 2.7rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .text-card-detail {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .detail-date, .detail-categories {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+    }
+
+    .date {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .date, .value {
+        text-align: right;
+    }
+
+    .value, .get-date, .categories {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detail-description {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .description {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .legend-values {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 0;
+    }
+
+    .legend-values span {
+        opacity: 0.7;
+    }
+
+    .value-received, .value-exit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .value-received div, .value-exit div  {
+        height: 1.3rem;
+        width: 2.5rem;
+        border-radius: .2rem;
+        margin: 0 1.3rem 1.7rem 0;
+    }
+
+    .value-received div {
+        background-color: #7B61FF;
+    }
+
+    .value-exit div {
+        background-color: #FA8C10;
+    }
+
+    .card-detail span {
+        font-size: 1.8rem;
+        margin-bottom: 1.7rem;
+    }
+}

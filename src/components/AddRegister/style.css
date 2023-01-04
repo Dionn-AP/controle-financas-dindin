@@ -1,0 +1,185 @@
+.container-register {
+    height: 76rem;
+}
+
+.card-add-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    background-color: #fff;
+    height: 98%;
+    min-width: 45rem;
+    border-radius: 1rem;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    z-index: 5;
+}
+
+.form-add-register-into {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #fff;
+    padding: 0rem 5rem 2rem;
+    height: 58rem;
+    width: 100%;
+    border-radius: 1rem;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+}
+
+.btn-close {
+    position: absolute;
+    height: 2.7rem;
+    top: 1.2rem;
+    right: 1.4rem;
+    cursor: pointer;
+}
+
+.form-add-register-into input {
+    all: unset;
+}
+
+.form-add-register-into label {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    color: #484848;
+    margin-bottom: .5rem;
+}
+
+.form-add-register-into input {
+    border: 1px solid rgba(85, 85, 85, 0.65);
+    padding: 1.2rem;
+    border-radius: .5rem;
+}
+
+.form-add-register-into input:focus {
+    border: 1px solid rgb(36, 35, 35);
+}
+
+.card-add-register h1 {
+    font-weight: 700;
+    font-size: 3.6rem;
+    line-height: 4.3rem;
+    margin-top: 1.3rem;
+}
+
+.add-register-buttons {
+    display: flex;
+    width: 100%;
+    margin-bottom: 3.6rem;
+}
+
+.add-register-buttons div {
+    text-align: center;
+    padding: 15px;
+    width: 50%;
+    border-radius: .5rem;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    cursor: pointer;
+}
+
+.btn-received {
+    background-color: #B9B9B9;
+}
+
+.btn-exits {
+    background-color: #FF576B;
+}
+
+.add-register-buttons 
+div:first-child:active {
+    background-color: #3A9FF1;
+}
+
+.input-value, 
+.input-categories, 
+.input-date,
+.input-description {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+select {
+    border: 1px solid rgba(85, 85, 85, 0.65);
+    padding: 1.2rem;
+    border-radius: .5rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: #484848;
+}
+
+select:focus {
+    border: 1px solid rgb(36, 35, 35);
+}
+
+option:hover {
+    background-color: rgba(85, 85, 85, 0.65);
+}
+
+.btn-confirm-add-register {
+    all: unset;
+    border-radius: .5rem;
+    color: #fff;
+    margin-top: 1rem;
+    background: #7978D9;
+    padding: 1.2rem 7rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.error {
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    margin-top: .5rem;
+    color: red;
+}
+
+
+@media (max-width: 540px) {
+    .card-add-register {
+        padding: 3rem 0;
+        height: 95vh;
+        min-width: 98%;
+    }
+
+    .form-add-register-into {
+        height: 100%;
+        padding: 10rem 2rem 1.2rem;
+        overflow-y: scroll;
+        overflow-x: none;
+    }
+
+    .card-add-register h1 {
+        margin-top: .7rem;
+        margin-bottom: 1.1rem;
+    }
+
+    .add-register-buttons {
+        
+        margin-bottom: 2rem;
+    }
+
+    .add-register-buttons div {
+        font-size: 1.6rem;
+    }
+
+    button.btn-confirm-add-register {
+        text-align: center;
+        padding: 1.5rem 0;
+        width: 100%;
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,330 @@
+.container-login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    font-style: normal;
+    color: #ffffff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container-content-login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    height: 100vh;
+    width: calc(100% - 33rem);
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    color: #ffffff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+.container-login img {
+    height: 5rem;
+    width: auto;
+    position: absolute;
+    top: 40px;
+    left: 0;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-content h1 {
+    font-weight: 700;
+    font-size: 5.2rem;
+    line-height: 6.2rem;
+    margin-bottom: 3rem;
+}
+
+.card-content h2 {
+    font-weight: 400;
+    font-size: 2.8rem;
+    line-height: 3.3rem;
+    margin-bottom: 4rem;
+}
+
+.card-content span {
+    color: #7978D9;
+}
+
+.card-content button {
+    all: unset;
+    padding: 1.4rem 4.7rem;
+    width: 18rem;
+    text-align: center;
+    color: #ffffff;
+    background-color: #7978D9;
+    border-radius: .5rem
+}
+
+.other-register {
+    display: none;
+    width: 100%;
+}
+
+.other-register h3 {
+    display: inline-block;
+    flex-direction: row;
+}
+
+.other-register a {
+    display: flex;
+    width: 92%;
+}
+
+.other-register button {
+    all: unset;
+    padding: 1.6rem 4.7rem;
+    width: 18rem;
+    text-align: center;
+    color: #ffffff;
+    background-color: #59C3C1;
+    border-radius: .5rem;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.sign-in {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    max-height: 45rem;
+    background-color: #ffffff;
+    padding: 4.8rem 3rem 4.6rem;
+    border-radius: .8rem;
+}
+
+.sign-in button {
+    cursor: pointer;
+}
+
+.sign-in h2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 3.3rem;
+    color: #7978D9;
+    margin-bottom: 4rem;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-email {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-password {
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-in .btn-confirm-sign-in {
+    all: unset;
+    border-radius: .5rem;
+    padding: 1.4rem 1rem;
+    width: 35rem;
+    text-align: center;
+    background-color: #7978D9;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.progess-successfull {
+    position: absolute;
+}
+
+.error {
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    margin-top: .5rem;
+    color: red;
+}
+
+@media (max-width: 1300px) {
+    .container-content-login {
+        width: calc(100% - 12rem);
+    }
+
+    .card-content {
+        padding-right: 3rem;
+        text-align: left;
+    }
+
+    .card-content h1 {
+        font-weight: 700;
+        font-size: 4.5rem;
+        line-height: 6.2rem;
+    }
+}
+
+@media (max-width: 1175px) {
+    .card-content {
+        height: 45rem;
+    }
+
+    .card-content h1 {
+        margin-bottom: 2rem;
+    }
+
+    .card-content h2 {
+        text-align: left;
+        /* margin-bottom: 1.5rem; */
+    }
+}
+
+@media (max-width: 1110px) {
+    .card-content h2 {
+        font-weight: 400;
+        font-size: 2.4rem;
+        line-height: 3.3rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 1016px) {
+    .container-login {
+        flex-direction: column;
+    }
+
+    .container-content-login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+        height: 100%;
+        font-family: 'Rubik', sans-serif;
+        font-style: normal;
+        color: #ffffff;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-bottom: 10rem;
+    }
+
+    .card-content {
+        text-align: center;
+        height: auto;
+        width: 80%;
+        padding: 0;
+        margin: 15rem 0 10rem 0;
+        align-items: center;
+    }
+
+    .card-content h1 {
+        font-size: 5.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .card-content h2 {
+        text-align: center;
+        font-size: 2.8rem;
+        margin-bottom: 4rem;
+        line-height: 3.7rem;
+    }
+
+    .sign-in {
+        width: 60%;
+        padding: 4.8rem 3.4rem 3.2rem;
+    }
+
+    .inputs {
+        width: 100%;
+    }
+
+    .input-email {
+        width: 100%;
+    }
+
+    .sign-in .btn-confirm-sign-in {
+        width: 50%;
+    }
+}
+
+@media (max-width: 628px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .container-content-login {
+        width: calc(100% - 5rem);
+    }
+}
+
+@media (max-width: 540px) {
+    .container-content-login {
+        width: calc(100% - 3.5rem);
+        padding-bottom: 6rem;
+    }
+
+    .card-content {
+        height: 70vh;
+        margin-bottom: 5rem;
+    }
+
+    .card-content h1 {
+        display: none;
+    }
+
+    .card-content h2 {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        line-height: 5rem;
+        height: 100%;
+        margin: 2rem 0 0;
+    }
+
+    .card-content button {
+        display: none;
+    }
+
+    .sign-in {
+        padding: 2.5rem 2rem 2rem;
+        width: 100%;
+    }
+
+    .sign-in .btn-confirm-sign-in {
+        width: 95%;
+        padding: 1.6rem 1rem;
+    }
+
+    .other-register {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 3rem;
+    }
+}

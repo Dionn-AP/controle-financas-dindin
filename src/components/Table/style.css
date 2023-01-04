@@ -1,0 +1,56 @@
+table {
+    width: 100rem;
+    text-align: center;
+}
+
+thead tr {
+    height: 5rem;
+    box-shadow: 0 .2rem 1.1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+}
+
+tbody tr {
+    height: 6rem;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+tr td {
+    border-bottom: 1px solid #E0E0E0;
+    cursor: pointer;
+}
+
+th button {
+    all: unset;
+    cursor: pointer;
+}
+
+.icons {
+    position: relative;
+}
+
+.icon-edit {
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.icon-trash{
+    cursor: pointer;
+}
+
+@media (max-width: 1300px) {
+    .table {
+        width: 100%;
+        overflow-x: scroll;
+        white-space: nowrap;
+        border-radius: 10px;
+        border: 1.5px solid #ececec;
+    }
+}
+
+@media (max-width: 540px) {
+    .table {
+        width: 100%;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+}

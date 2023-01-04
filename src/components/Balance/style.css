@@ -1,0 +1,103 @@
+.content-abstract {
+    display: flex;
+    flex-direction: column;
+    background-color: #FAFAFA;
+    box-shadow: 0 .2rem 1.1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    width: 27rem;
+    padding: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+    margin-bottom: 1.6rem;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+}
+
+.content-abstract h2 {
+    margin-bottom: 3.6rem;
+}
+
+.received {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Rubik', sans-serif;
+}
+
+.received span:last-child  {
+    color: #645FFB;
+    margin-bottom: 1.4rem;
+}
+
+.exits {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Rubik', sans-serif;
+}
+
+.exits span:last-child {
+    color: #FA8C10;
+}
+
+.balance {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.7rem;
+    line-height: 1.7rem;
+    font-family: 'Rubik', sans-serif;
+}
+
+.balance span:last-child {
+    color: #3A9FF1;
+}
+
+.add-register {
+    all: unset;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-color: #7978D9;
+    border-radius: .5rem;
+    padding: 1.5rem 4.5rem;
+    cursor: pointer;
+}
+
+#btn-pdf-resume {
+    display: none;
+}
+
+@media (max-width: 1300px) {
+    
+    .content-abstract {
+        width: 100%;
+    }
+}
+
+@media (max-width: 540px) {
+    .content-abstract {
+        width: 100%;
+    }
+
+    #btn-pdf-resume {
+        all: unset;
+        display: flex;
+        cursor: pointer;
+        position: absolute;
+        background-color: '#FAFAFA' !important;
+        top: 5.8rem;
+        right: 6rem;
+    }
+}
