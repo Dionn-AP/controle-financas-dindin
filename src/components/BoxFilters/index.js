@@ -1,5 +1,4 @@
 import './styles.css';
-import { useState, useEffect } from 'react';
 import { getItem, getHeaders } from '../../utils/storageAndFunctions';
 import IconCloseWhite from '../../assets/icon-close-rotate-wihte.svg';
 import IconPlusBlack from '../../assets/icon-plus-black.svg';
@@ -56,7 +55,6 @@ function BoxFilters({
 
         } catch (error) {
             return setMessageSearchFilter("Não há transações associadas à categoria selecionada");
-            //return console.log(error)
         }
     }
 
