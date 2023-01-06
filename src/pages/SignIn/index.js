@@ -51,6 +51,7 @@ function SignIn() {
                 opacityCard = '0.8';
                 setTimeout(() => {
                     setSuccessfull(false)
+                    opacityCard = "1";
                     navigate('/home')
                 }, 1500)
             }
