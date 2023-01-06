@@ -25,8 +25,10 @@ function Home() {
     const routePath = useLocation();
     const token = getItem('token');
     const [openFilters, setOpenFilters] = useState(false);
+    const [btnActive, setBtnActive] = useState([]);
     const [openResumeCard, setResumeCard] = useState(false);
     const [filter, setFilter] = useState('');
+    const [messageSearchFilter, setMessageSearchFilter] = useState("Não há transações cadastradas");
     const [user, setUser] = useState([]);
     const [balance, setBalance] = useState({});
     const [transactions, setTransactions] = useState([]);
@@ -72,6 +74,26 @@ function Home() {
         }
     };
 
+    let arrayCategories = [...btnActive];
+
+    async function listCategories() {
+        try {
+            const response = await api.get('/categoria', getHeaders(token));
+            const resultResponse = [...response.data];
+            // eslint-disable-next-line
+            resultResponse.map((item) => {
+                arrayCategories.push({
+                    id: item.id,
+                    name: item.nome,
+                    status: false
+                });
+            });
+            setBtnActive(arrayCategories);
+        } catch (error) {
+            console.log(error.response)
+        }
+    };
+
     async function lodaTransactions() {
         try {
             const response = await api.get('/transacao', getHeaders(token));
@@ -105,12 +127,13 @@ function Home() {
         loadBalance();
         lodaTransactions();
         // eslint-disable-next-line
-    }, [balance, transactions]);
+    }, []);
 
     useEffect(() => {
         lodaUser();
+        listCategories();
         // eslint-disable-next-line
-    }, [user]);
+    }, []);
 
     useEffect(() => {
         onTop();
@@ -211,7 +234,7 @@ function Home() {
                     <div className='filter-table'>
                         <button
                             onClick={() => openBoxFilters()}
-                            id='btn-filter'
+                            className='btn-filters'
                         >
                             <img src={Filter} alt='filter-table' />
                             Filtrar
@@ -259,9 +282,13 @@ function Home() {
                         {
                             openFilters &&
                             <BoxFilters
+                                setMessageSearchFilter={setMessageSearchFilter}
                                 lodaTransactions={lodaTransactions}
                                 setTransactions={setTransactions}
                                 setFilter={setFilter}
+                                btnActive={btnActive}
+                                setBtnActive={setBtnActive}
+                                arrayCategories={arrayCategories}
                             />
                         }
                         <Table
@@ -277,7 +304,7 @@ function Home() {
                         />
                         {!transactions.length &&
                             <div className='message-filter'>
-                                <h1>Não há transações com essa categoria</h1>
+                                <h1>{messageSearchFilter}</h1>
                             </div>
                         }
                     </div>
