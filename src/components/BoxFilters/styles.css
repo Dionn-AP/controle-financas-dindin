@@ -3,9 +3,9 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
-    width: 100rem;
     height: auto;
-    background-color: #FAFAFA;
+    width: 100rem;
+    background-color: #ebebeb;
     box-shadow: 0 .2rem 1.1rem rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
     margin-bottom: 3rem;
