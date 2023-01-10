@@ -21,18 +21,6 @@ export function convertValues(value) {
   }).format(value)
 };
 
-export function convertDate(value) {
-  return Intl.DateTimeFormat(['ban', 'id']).format(value)
-};
-
-export function convertDayOfWeek(value) {
-  let dayOfWeek = Intl.DateTimeFormat('pt-BR', { weekday: 'short' }).format(value);
-  return dayOfWeek = dayOfWeek.substring(0, 1)
-    .toUpperCase() + dayOfWeek
-      .substring(1, dayOfWeek.length)
-      .toLocaleLowerCase();
-};
-
 export function getHeaders(iToken) {
   const headers = {
     headers: {
@@ -55,5 +43,35 @@ export function messaErroTreatmentCategoriesAddRegister(message) {
   const erroMessage = erroTreatment.substring(0, 1)
     .toUpperCase() + erroTreatment.substring(1, erroTreatment.length)
       .toLocaleLowerCase();
-      return erroMessage;
+  return erroMessage;
+}
+
+function dateFormat(date) {
+  date = date.slice(0, date.indexOf('T')).split('-');
+  const newDate = new Date(date);
+  return newDate.toLocaleDateString(newDate.getTimezoneOffset());
+}
+
+function formatEditDate(date) {
+  return date.slice(0, date.indexOf('T'));
+}
+
+export function convertDate(value) {
+  return Intl.DateTimeFormat(['ban', 'id']).format(value)
+};
+
+export function convertDayOfWeek(value) {
+  let dayOfWeek = Intl.DateTimeFormat('pt-BR', { weekday: 'short' })
+  .format(new Date()
+  .setDate(value.getDate() + 1));
+  
+  return dayOfWeek = dayOfWeek.substring(0, 1)
+    .toUpperCase() + dayOfWeek
+      .substring(1, dayOfWeek.length)
+      .toLocaleLowerCase();
+};
+
+export {
+  dateFormat,
+  formatEditDate
 }
