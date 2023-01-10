@@ -9,13 +9,35 @@
     position: relative;
     justify-content: flex-end;
     background-color: #fff;
-    padding: 1rem 5rem 2rem;
-    min-height: 64rem;
+    padding: 1rem 3rem 1rem;
+    height: auto;
     min-width: 45rem;
     border-radius: 1rem;
     font-family: 'Rubik', sans-serif;
     font-style: normal;
     z-index: 5;
+}
+
+.scroll-form-edit-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 47rem;
+    width: 100%;
+}
+
+.content-form-edit-register {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
 }
 
 .btn-close {
@@ -114,7 +136,6 @@
     all: unset;
     border-radius: .5rem;
     color: #fff;
-    margin-top: 1rem;
     background-color: #7978D9;
     padding: 1.2rem 7rem;
     margin-bottom: 1rem;
@@ -123,8 +144,44 @@
 
 @media (max-width: 540px) {
     .edit-register {
-        min-height: 95%;
+        height: 92vh;
         min-width: 98%;
-        padding: 3rem 2rem 2.3rem;
+        padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .scroll-form-edit-register {
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        white-space: nowrap;
+    }
+
+    .scroll-form-edit-register::-webkit-scrollbar {
+        display: none;
+    }
+
+    .content-form-edit-register {
+        height: 95rem;
+    }
+
+    .edit-register h1 {
+        margin-bottom: 1.1rem;
+    }
+
+    .register-buttons {
+        margin-bottom: 2rem;
+    }
+
+    .register-buttons div {
+        font-size: 1.6rem;
+    }
+
+    button.btn-confirm-edit-register {
+        text-align: center;
+        padding: 1.5rem 0;
+        width: 100%;
+        font-size: 1.8rem;
+        margin: 1rem;
+        margin-bottom: 0;
     }
 }

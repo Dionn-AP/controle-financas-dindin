@@ -13,8 +13,18 @@
     min-width: 45rem;
     border-radius: 1rem;
     font-family: 'Rubik', sans-serif;
+    padding: 0 3rem;
     font-style: normal;
     z-index: 5;
+}
+
+.scroll-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 47rem;
+    width: 100%;
 }
 
 .form-add-register-into {
@@ -23,8 +33,7 @@
     flex-direction: column;
     justify-content: flex-end;
     background-color: #fff;
-    padding: 0rem 5rem 2rem;
-    height: 58rem;
+    height: 100%;
     width: 100%;
     border-radius: 1rem;
     font-family: 'Rubik', sans-serif;
@@ -94,13 +103,12 @@
     background-color: #FF576B;
 }
 
-.add-register-buttons 
-div:first-child:active {
+.add-register-buttons div:first-child:active {
     background-color: #3A9FF1;
 }
 
-.input-value, 
-.input-categories, 
+.input-value,
+.input-categories,
 .input-date,
 .input-description {
     display: flex;
@@ -150,16 +158,27 @@ option:hover {
 
 @media (max-width: 540px) {
     .card-add-register {
-        padding: 3rem 0;
-        height: 95vh;
+        height: 92vh;
         min-width: 98%;
+        padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .scroll-form {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        white-space: nowrap;
+    }
+
+    .scroll-form::-webkit-scrollbar {
+        display: none;
     }
 
     .form-add-register-into {
-        height: 100%;
-        padding: 10rem 2rem 1.2rem;
-        overflow-y: scroll;
-        overflow-x: none;
+        height: 95rem;
     }
 
     .card-add-register h1 {
@@ -168,7 +187,6 @@ option:hover {
     }
 
     .add-register-buttons {
-        
         margin-bottom: 2rem;
     }
 
@@ -181,5 +199,6 @@ option:hover {
         padding: 1.5rem 0;
         width: 100%;
         font-size: 1.8rem;
+        margin-bottom: 0;
     }
 }
