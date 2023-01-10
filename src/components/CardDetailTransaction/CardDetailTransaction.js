@@ -2,7 +2,8 @@ import './styles.css';
 import {
     convertDate,
     convertDayOfWeek,
-    convertValues
+    convertValues,
+    dateFormat
 } from '../../utils/storageAndFunctions';
 import Close from '../../assets/close.svg';
 
@@ -49,7 +50,7 @@ function CardDetailTransaction({ detailTransaction, setOpenCardDetail }) {
                         <span>
                             <strong>Data</strong>
                         </span>
-                        <span>{convertDate(new Date(detailTransaction.data))} </span>
+                        <span>{dateFormat(detailTransaction.data)} </span>
                     </div>
                 </div>
                 <div className='detail-description'>
