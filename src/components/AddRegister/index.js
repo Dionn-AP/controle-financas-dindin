@@ -86,75 +86,78 @@ function AddRegister({
     return (
         <form className='card-add-register' onSubmit={handleSubmit}>
             <h1>Adicionar Registro</h1>
-            <div className='form-add-register-into'>
-                <img className='btn-close'
-                    src={Close} alt='close button'
-                    onClick={() => setShowRegister(false)}
-                />
-                <div className='add-register-buttons'>
-                    <div style={{ backgroundColor: types === 'entrada' && '#3A9FF1' }}
-                        className='btn-received'
-                        onClick={() => setTypes('entrada')}
-                    >
-                        Entrada
+            <div className='scroll-form'>
+                <div className='form-add-register-into'>
+                    <img className='btn-close'
+                        src={Close} alt='close button'
+                        onClick={() => setShowRegister(false)}
+                    />
+                    <div className='add-register-buttons'>
+                        <div style={{ backgroundColor: types === 'entrada' && '#3A9FF1' }}
+                            className='btn-received'
+                            onClick={() => setTypes('entrada')}
+                        >
+                            Entrada
+                        </div>
+                        <div style={{ backgroundColor: types === 'entrada' && '#B9B9B9' }}
+                            className='btn-exits'
+                            onClick={() => setTypes('saida')}
+                        >
+                            Saída
+                        </div>
                     </div>
-                    <div style={{ backgroundColor: types === 'entrada' && '#B9B9B9' }}
-                        className='btn-exits'
-                        onClick={() => setTypes('saida')}
-                    >
-                        Saída
+                    <div className='input-value'>
+                        <label>Valor</label>
+                        <input
+                            name='valor'
+                            type='number'
+                            value={form.valor}
+                            onChange={handleChangeInputValue}
+                        />
+                    </div>
+                    <div className='input-categories'>
+                        <label>Categorias</label>
+                        <select
+                            value={select.id}
+                            onChange={(event) => handleChangeSelect(event)}
+                        >
+                            {options.map((item) => (
+                                <option
+                                    key={item.id}
+                                    type='text'
+                                    value={item.id}>
+                                    {item.nome}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className='input-date'>
+                        <label>Data</label>
+                        <input
+                            name='data'
+                            type='date'
+                            value={form.data}
+                            onChange={handleChangeInputValue}
+                        />
+                    </div>
+                    <div className='input-description'>
+                        <label>Descrição</label>
+                        <input
+                            name='descricao'
+                            type='text'
+                            value={form.descricao}
+                            onChange={handleChangeInputValue}
+                        />
                     </div>
                 </div>
-                <div className='input-value'>
-                    <label>Valor</label>
-                    <input
-                        name='valor'
-                        type='number'
-                        value={form.valor}
-                        onChange={handleChangeInputValue}
-                    />
-                </div>
-                <div className='input-categories'>
-                    <label>Categorias</label>
-                    <select
-                        value={select.id}
-                        onChange={(event) => handleChangeSelect(event)}
-                    >
-                        {options.map((item) => (
-                            <option
-                                key={item.id}
-                                type='text'
-                                value={item.id}>
-                                {item.nome}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-                <div className='input-date'>
-                    <label>Data</label>
-                    <input
-                        name='data'
-                        type='date'
-                        value={form.data}
-                        onChange={handleChangeInputValue}
-                    />
-                </div>
-                <div className='input-description'>
-                    <label>Descrição</label>
-                    <input
-                        name='descricao'
-                        type='text'
-                        value={form.descricao}
-                        onChange={handleChangeInputValue}
-                    />
-                </div>
-                <button
-                    className='btn-confirm-add-register'
-                >
-                    Confirmar
-                </button>
-                <span className='error' >{erro && erro}</span>
             </div>
+
+            <button
+                className='btn-confirm-add-register'
+            >
+                Confirmar
+            </button>
+            <span className='error' >{erro && erro}</span>
         </form>
     )
 };
