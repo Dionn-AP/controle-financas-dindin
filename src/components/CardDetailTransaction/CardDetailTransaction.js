@@ -1,6 +1,5 @@
 import './styles.css';
 import {
-    convertDate,
     convertDayOfWeek,
     convertValues,
     dateFormat

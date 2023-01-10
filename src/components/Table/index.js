@@ -1,6 +1,5 @@
 import IconEdit from '../../assets/icon-pen.svg';
 import {
-    convertDate,
     convertValues,
     convertDayOfWeek,
     dateFormat
