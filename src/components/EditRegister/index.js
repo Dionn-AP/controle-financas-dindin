@@ -18,8 +18,6 @@ function EditRegister({
     setAlertSuccessfullDelete
 }) {
     const token = getItem('token');
-    //let dateNoFormated = showEdit.transaction.data;
-    //console.log(formatEditDate(dateNoFormated))
     const [types, setTypes] = useState(showEdit.transaction.tipo);
     const [erro, setErro] = useState('');
     const [options, setOptions] = useState([]);
