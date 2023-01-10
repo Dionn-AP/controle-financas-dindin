@@ -42,13 +42,13 @@ function EditUser({
                 setErro('Você precisa confirmar a senha.')
                 return
             }
-
+            // eslint-disable-next-line
             const response = await api.put(`/usuario`, {
                 nome: form.nome,
                 email: form.email,
                 senha: form.senha.trim()
             }, getHeaders(token));
-            console.log(response)
+
             setOpen(true);
             setAlertSuccessfullDelete('Cadastro editado com sucesso!');
             lodaUser();
@@ -65,37 +65,41 @@ function EditUser({
                 onClick={() => setShowEditUser(false)}
             />
             <h1>Editar Perfil</h1>
-            <div className='inputs-group-edit-user'>
-                <InputEmailOrName
-                    form={form}
-                    type='text'
-                    label='Nome'
-                    setForm={setForm}
-                    handleChangeInputValue={handleChangeInputValue}
-                />
-                <InputEmailOrName
-                    form={form}
-                    type='text'
-                    label='E-mail'
-                    setForm={setForm}
-                    handleChangeInputValue={handleChangeInputValue}
-                />
-                <InputPassword
-                    form={form}
-                    type='password'
-                    label='Senha'
-                    mrBottom='2rem'
-                    setForm={setForm}
-                    handleChangeInputValue={handleChangeInputValue}
-                />
-                <InputPassword
-                    form={form}
-                    type='password'
-                    label='Confirmação de senha'
-                    mrBottom='0'
-                    setForm={setForm}
-                    handleChangeInputValue={handleChangeInputValue}
-                />
+            <div className='scroll-form-edit-user'>
+                <div className='content-form-edit-user'>
+                    <div className='inputs-group-edit-user'>
+                        <InputEmailOrName
+                            form={form}
+                            type='text'
+                            label='Nome'
+                            setForm={setForm}
+                            handleChangeInputValue={handleChangeInputValue}
+                        />
+                        <InputEmailOrName
+                            form={form}
+                            type='text'
+                            label='E-mail'
+                            setForm={setForm}
+                            handleChangeInputValue={handleChangeInputValue}
+                        />
+                        <InputPassword
+                            form={form}
+                            type='password'
+                            label='Senha'
+                            mrBottom='2rem'
+                            setForm={setForm}
+                            handleChangeInputValue={handleChangeInputValue}
+                        />
+                        <InputPassword
+                            form={form}
+                            type='password'
+                            label='Confirmação de senha'
+                            mrBottom='0'
+                            setForm={setForm}
+                            handleChangeInputValue={handleChangeInputValue}
+                        />
+                    </div>
+                </div>
             </div>
             <button className='btn-confirm-edit-user'>Confirmar</button>
             <span className='error' >{erro && erro}</span>
