@@ -2,7 +2,8 @@ import IconEdit from '../../assets/icon-pen.svg';
 import {
     convertDate,
     convertValues,
-    convertDayOfWeek
+    convertDayOfWeek,
+    dateFormat
 } from '../../utils/storageAndFunctions';
 import IconTrash from '../../assets/icon-trash.svg';
 import PopPup from '../../components/PopPup';
@@ -39,7 +40,7 @@ function Table({
                         <tr key={transaction.id}>
                             <td
                                 onClick={() => openDetailTransaction(transaction)}
-                            >{convertDate(new Date(transaction.data))} </td>
+                            >{dateFormat(transaction.data)} </td>
                             <td
                                 onClick={() => openDetailTransaction(transaction)}
                             >{convertDayOfWeek(new Date(transaction.data))}</td>
