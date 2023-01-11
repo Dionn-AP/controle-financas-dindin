@@ -23,7 +23,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 47rem;
+    max-height: 47rem;
     width: 100%;
 }
 
@@ -85,7 +85,7 @@
 
 .add-register-buttons div {
     text-align: center;
-    padding: 15px;
+    padding: 1.5rem;
     width: 50%;
     border-radius: .5rem;
     color: #fff;
@@ -158,7 +158,7 @@ option:hover {
 
 @media (max-width: 540px) {
     .card-add-register {
-        height: 92vh;
+        max-height: 57rem;
         min-width: 98%;
         padding: 3rem 1.5rem 1.5rem;
     }
@@ -192,6 +192,7 @@ option:hover {
 
     .add-register-buttons div {
         font-size: 1.6rem;
+        padding: 1.2rem;
     }
 
     button.btn-confirm-add-register {
