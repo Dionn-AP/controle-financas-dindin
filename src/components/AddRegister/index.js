@@ -10,6 +10,7 @@ import Close from '../../assets/close.svg';
 
 function AddRegister({
     lodaTransactions,
+    balance,
     loadBalance,
     setShowRegister,
     setAlertSuccessfullDelete,
@@ -78,10 +79,14 @@ function AddRegister({
                 setErro(error.response.data.mensagem)
             }
         }
-        loadBalance();
         listCategories();
         // eslint-disable-next-line
     }, []);
+
+    useEffect(() => {
+        loadBalance();
+        // eslint-disable-next-line
+    }, [balance]);
 
     return (
         <form className='card-add-register' onSubmit={handleSubmit}>

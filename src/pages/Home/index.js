@@ -25,7 +25,6 @@ function Home() {
     const routePath = useLocation();
     const token = getItem('token');
     const [openFilters, setOpenFilters] = useState(false);
-    const [btnActive, setBtnActive] = useState([]);
     const [openResumeCard, setResumeCard] = useState(false);
     const [filter, setFilter] = useState('');
     const [messageSearchFilter, setMessageSearchFilter] = useState("Não há transações cadastradas");
@@ -74,26 +73,6 @@ function Home() {
         }
     };
 
-    let arrayCategories = [...btnActive];
-
-    async function listCategories() {
-        try {
-            const response = await api.get('/categoria', getHeaders(token));
-            const resultResponse = [...response.data];
-            // eslint-disable-next-line
-            resultResponse.map((item) => {
-                arrayCategories.push({
-                    id: item.id,
-                    name: item.nome,
-                    status: false
-                });
-            });
-            setBtnActive(arrayCategories);
-        } catch (error) {
-            console.log(error.response)
-        }
-    };
-
     async function lodaTransactions() {
         try {
             const response = await api.get('/transacao', getHeaders(token));
@@ -125,13 +104,12 @@ function Home() {
 
     useEffect(() => {
         loadBalance();
-        lodaTransactions();
         // eslint-disable-next-line
     }, []);
 
     useEffect(() => {
         lodaUser();
-        listCategories();
+        lodaTransactions();
         // eslint-disable-next-line
     }, []);
 
@@ -178,6 +156,8 @@ function Home() {
                     <EditRegister
                         setOpen={setOpen}
                         showEdit={showEdit}
+                        balance={balance}
+                        loadBalance={loadBalance}
                         setShowEdit={setShowEdit}
                         lodaTransactions={lodaTransactions}
                         setAlertSuccessfullDelete={setAlertSuccessfullDelete}
@@ -286,9 +266,6 @@ function Home() {
                                 lodaTransactions={lodaTransactions}
                                 setTransactions={setTransactions}
                                 setFilter={setFilter}
-                                btnActive={btnActive}
-                                setBtnActive={setBtnActive}
-                                arrayCategories={arrayCategories}
                             />
                         }
                         <Table

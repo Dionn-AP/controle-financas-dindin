@@ -3,17 +3,37 @@ import { getItem, getHeaders } from '../../utils/storageAndFunctions';
 import IconCloseWhite from '../../assets/icon-close-rotate-wihte.svg';
 import IconPlusBlack from '../../assets/icon-plus-black.svg';
 import api from '../../services/api';
+import { useEffect, useState } from 'react';
 
-function BoxFilters({ 
-    btnActive, 
-    setBtnActive, 
-    arrayCategories, 
-    setTransactions, 
-    lodaTransactions, 
+function BoxFilters({
+    setTransactions,
+    lodaTransactions,
     setMessageSearchFilter }) {
     const token = getItem('token');
+    const [btnActive, setBtnActive] = useState([]);
 
     let wordsFilter = 'filtro[]=';
+
+    let arrayCategories = [...btnActive];
+
+    async function listCategories() {
+        try {
+            const response = await api.get('/categoria', getHeaders(token));
+            const resultResponse = [...response.data];
+            // eslint-disable-next-line
+            resultResponse.map((item) => {
+                arrayCategories.push({
+                    id: item.id,
+                    name: item.nome,
+                    status: false
+                });
+            });
+            setBtnActive(arrayCategories);
+        } catch (error) {
+            console.log(error.response)
+        }
+    };
+
 
     function handleActiveFilter(categories, index) {
         let categorieFind = arrayCategories.find((item) => {
@@ -69,6 +89,11 @@ function BoxFilters({
         setBtnActive(arrayCategories);
         lodaTransactions();
     }
+
+    useEffect(() => {
+        listCategories();
+        // eslint-disable-next-line
+    }, [])
 
     return (
         <div className='container-filter'>

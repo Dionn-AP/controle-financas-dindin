@@ -11,6 +11,7 @@ import Close from '../../assets/close.svg';
 
 function EditRegister({
     lodaTransactions,
+    balance,
     loadBalance,
     setShowEdit,
     showEdit,
@@ -80,6 +81,11 @@ function EditRegister({
         listCategories();
         // eslint-disable-next-line
     }, []);
+
+    useEffect(() => {
+        loadBalance();
+        // eslint-disable-next-line
+    }, [balance]);
 
     return (
         <form className='edit-register' onSubmit={handleSubmit}>
