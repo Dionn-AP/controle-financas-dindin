@@ -37,6 +37,8 @@ function SignIn() {
         }
 
         try {
+            setSuccessfull(true);
+            opacityCard = '0.8';
             const response = await api.post('/login', {
                 ...form
             });
@@ -47,15 +49,14 @@ function SignIn() {
             setItem('user', usuario.id)
 
             if (token) {
-                setSuccessfull(true);
-                opacityCard = '0.8';
                 setTimeout(() => {
-                    setSuccessfull(false)
+                    setSuccessfull(false);
                     opacityCard = "1";
                     navigate('/home')
                 }, 1500)
             }
         } catch (error) {
+            setSuccessfull(false);
             if (error.response.data.mensagem) {
                 return setErro(error.response.data.mensagem);
             }
