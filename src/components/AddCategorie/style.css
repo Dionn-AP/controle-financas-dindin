@@ -1,0 +1,352 @@
+.card-add-categorie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  background-color: #fff;
+  height: auto;
+  min-width: 45rem;
+  border-radius: 1rem;
+  font-family: "Rubik", sans-serif;
+  padding: 1.5rem 3rem;
+  font-style: normal;
+  z-index: 5;
+}
+
+.modal-delete-categorie {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 0 3rem;
+  z-index: 20;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.modal-delete-categorie h3 {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.box-modal-delete-categorie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  padding: 2rem 0;
+  border-radius: 1rem;
+  margin-bottom: 1.6rem;
+  background-color: #fff;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  animation: scale 0.2s ease-in-out;
+}
+
+.buttons-yes-no {
+  display: flex;
+  flex-direction: row;
+  border-radius: 1rem;
+  gap: 1.5rem;
+}
+
+.btn-yes,
+.btn-no {
+  all: unset;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0.3rem 1.5rem;
+}
+
+.btn-yes:active,
+.btn-no:active {
+  transform: scale(0.95);
+}
+
+.btn-yes {
+  background-color: #3a9ff1;
+}
+
+.btn-no {
+  background-color: #ff576b;
+}
+
+.box-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 25rem;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: #fff;
+}
+
+.box-error h5 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.error-menssage {
+  color: #ff576b;
+}
+
+.success-menssage {
+  color: #32cd32;
+}
+
+.descrition-categories-scroll {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  padding: .1rem;
+  overflow-y: scroll;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.descrition-categories-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.description-categories {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1.2rem 1rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.description-categories span {
+  display: flex;
+  align-items: flex-start;
+  color: #fa8c10;
+  margin-bottom: 0.5rem;
+}
+
+.description-categories p {
+  color: #000;
+  margin-right: 0.4rem;
+}
+
+.scroll-form-add-categorie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: auto;
+  width: 100%;
+  background-color: #fff;
+  overflow-y: scroll;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.scroll-form-add-categorie::-webkit-scrollbar {
+  display: none;
+}
+
+.card-content-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 40rem;
+  max-height: 53rem;
+  width: 100%;
+  background-color: #fff;
+}
+
+h1 {
+  margin-bottom: 3rem;
+}
+
+.btn-close-add-categorie {
+  position: absolute;
+  height: 2.7rem;
+  top: 1rem;
+  right: 1.2rem;
+  cursor: pointer;
+}
+
+.btn-close-add-categorie:hover {
+  transform: scale(1.1);
+}
+
+.icon-plus {
+  position: absolute;
+  bottom: 1.1rem;
+  right: 0.7rem;
+  height: 1rem;
+  width: auto;
+  cursor: pointer;
+}
+
+.icon-plus:active {
+  transform: scale(0.9);
+}
+
+.input-categorie {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.input-categorie input,
+.description-categorie textarea {
+  all: unset;
+}
+
+.input-text-area-error {
+  border: 1px solid #ff0000;
+}
+
+.input-categorie input:focus,
+.description-categorie textarea:focus {
+  border-color: #484848;
+}
+
+.input-categorie label,
+.description-categorie label {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: #484848;
+  margin-bottom: 0.5rem;
+}
+
+.input-categorie input,
+.description-categorie textarea {
+  border: 1px solid rgba(85, 85, 85, 0.65);
+  padding: 1rem 1.2rem;
+  border-radius: 0.5rem;
+}
+
+.description-categorie {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.progess-loading {
+  position: absolute;
+  z-index: 10;
+}
+
+.existing-categories {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name-categorie {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.name-categorie:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transition: all 0.8s;
+}
+
+.name-categorie:hover img {
+  opacity: 1;
+  transition: all 0.8s;
+}
+
+.image-trash {
+  opacity: 0;
+  height: 1.7rem;
+  width: auto;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.image-trash:active {
+  transform: scale(0.8);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.new-categorie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #469536;
+  background: #dbead5;
+  border-radius: 8px;
+  padding: 0 0.3rem;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@media (max-width: 1025px) {
+  .card-add-categorie {
+    min-height: 95%;
+    max-height: 95%;
+  }
+}
+
+@media (max-width: 769px) {
+  .card-add-categorie {
+    min-height: 95%;
+    max-height: 95%;
+  }
+}
+
+@media (max-width: 540px) {
+  .card-add-categorie {
+    min-height: 95%;
+    max-height: 95%;
+    min-width: 97%;
+  }
+}

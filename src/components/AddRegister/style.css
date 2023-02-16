@@ -147,18 +147,18 @@ option:hover {
     margin-bottom: 1rem;
 }
 
-.error {
+.error-add-register {
     font-weight: 700;
     font-size: 1.4rem;
     line-height: 1.7rem;
-    margin-top: .5rem;
+    margin-bottom: .5rem;
     color: red;
 }
 
 
 @media (max-width: 540px) {
     .card-add-register {
-        max-height: 57rem;
+        max-height: 97%;
         min-width: 98%;
         padding: 3rem 1.5rem 1.5rem;
     }

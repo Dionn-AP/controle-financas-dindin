@@ -1,56 +1,154 @@
-table {
-    width: 100rem;
-    text-align: center;
+.container-content-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100rem;
+  text-align: center;
+  position: relative;
 }
 
-thead tr {
-    height: 5rem;
-    box-shadow: 0 .2rem 1.1rem rgba(0, 0, 0, 0.2);
-    border-radius: 1rem;
+.head-table {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  width: 100%;
+  box-shadow: 0 0.2rem 1.1rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  padding: 0 2rem;
+  margin-bottom: 1.5rem;
 }
 
-tbody tr {
-    height: 6rem;
-    border-bottom: 1px solid #E0E0E0;
+.head-table span {
+  text-align: left;
+  width: 26rem;
 }
 
-tr td {
-    border-bottom: 1px solid #E0E0E0;
-    cursor: pointer;
+span.head-table-date {
+  width: 13rem;
 }
 
-th button {
-    all: unset;
-    cursor: pointer;
+span.head-table-date-week {
+  text-align: center;
+}
+
+span.head-table-description {
+  width: 30rem;
+  margin-right: 1.5rem;
+}
+
+span.head-table-value {
+    width: 14rem;
+}
+
+span.head-table-empty {
+  width: 14rem;
+}
+
+.body-table {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.content-table {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  width: 100%;
+  padding: 0 2rem 0 1.6rem;
+  border-radius: 1rem;
+  
+}
+
+.content-table-row {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.content-table span {
+  text-align: left;
+  width: 26rem;
+  cursor: pointer;
+}
+
+span.content-table-date {
+  text-align: center;
+  width: 13rem;
+}
+
+.content-table:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: all 0.5s;
+}
+
+span.content-table-day-week {
+  text-align: center;
+}
+
+span.content-table-description {
+  width: 30rem;
+  margin-right: 1.5rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+span.content-table-value {
+    width: 14rem;
 }
 
 .icons {
-    position: relative;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  justify-content: flex-end;
+  width: 14rem;
+  position: relative;
 }
 
 .icon-edit {
-    cursor: pointer;
-    margin-right: 1rem;
+  cursor: pointer;
+  margin-right: 1rem;
 }
 
-.icon-trash{
-    cursor: pointer;
+.icon-trash {
+  cursor: pointer;
+}
+
+.progress-loading-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  top: 8rem;
 }
 
 @media (max-width: 1300px) {
-    .table {
-        width: 100%;
-        overflow-x: scroll;
-        white-space: nowrap;
-        border-radius: 10px;
-        border: 1.5px solid #ececec;
-    }
+  .table {
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    border-radius: 10px;
+    border: 1.5px solid #ececec;
+  }
 }
 
 @media (max-width: 540px) {
-    .table {
-        width: 100%;
-        overflow-x: scroll;
-        white-space: nowrap;
-    }
+  .table {
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
 }
