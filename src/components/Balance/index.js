@@ -17,16 +17,16 @@ function Balance({ setShowRegister, balance, transactions }) {
                 <h2>Resumo</h2>
                 <div className='received'>
                     <span>Entradas</span>
-                    <span>{convertValues(balance?.entrada)}</span>
+                    <span>{!balance.entrada ? "R$ 0,00" : convertValues(balance?.entrada)}</span>
                 </div>
                 <div className='exits'>
                     <span>Saídas</span>
-                    <span className='exits-price'>{convertValues(balance?.saida)}</span>
+                    <span className='exits-price'>{!balance.saida ? "R$ 0,00" : convertValues(balance?.saida)}</span>
                 </div>
 
                 <div className='balance'>
                     <span>Saldo</span>
-                    <span>{convertValues(balance?.saldo)}</span>
+                    <span>{!balance.saldo ? "R$ 0,00" : convertValues(balance?.saldo)}</span>
                 </div>
                 <button
                     id='btn-pdf-resume'
