@@ -4,7 +4,7 @@ import Background from '../../assets/background.svg'
 import Logo from '../../assets/logo.svg';
 import { useState } from 'react';
 import api from '../../services/api';
-import { setItem, messaErroTreatment } from '../../utils/storageAndFunctions';
+import { setItem } from '../../utils/storageAndFunctions';
 import InputPassword from '../../components/TextFildPassword/TextFildPass';
 import InputEmail from '../../components/TextFildEmail/TextFildEmail';
 import SingleProgess from '../../components/SingleProgress';
@@ -57,12 +57,12 @@ function SignIn() {
             }
         } catch (error) {
             setSuccessfull(false);
+            opacityCard = "1";
             if (error.response.data.mensagem) {
                 return setErro(error.response.data.mensagem);
             }
             else if (error.response.data) {
-                const erro = messaErroTreatment(error.response.data);
-                return setErro(erro);
+                return setErro("Falha de comunicação com o servidor");
             }
         }
     }
