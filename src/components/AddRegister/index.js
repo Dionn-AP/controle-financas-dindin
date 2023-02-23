@@ -3,6 +3,7 @@ import {
   getItem,
   getHeaders,
   messaErroTreatmentCategoriesAddRegister,
+  money,
 } from "../../utils/storageAndFunctions";
 import { useState, useEffect } from "react";
 import api from "../../services/api";
@@ -20,7 +21,9 @@ function AddRegister({
 
   const [types, setTypes] = useState("saida");
   const [erro, setErro] = useState("");
-  const [options, setOptions] = useState([]);
+  const [options, setOptions] = useState([
+    { id: 0, nome: "Selecione uma categoria", descricao: "" },
+  ]);
   const [select, setSelect] = useState({ id: "", nome: "" });
   const [form, setForm] = useState({
     tipo: null,
@@ -51,11 +54,17 @@ function AddRegister({
         setErro("Valor é um campo obrigtório");
         return;
       }
+      // eslint-disable-next-line
+      if (Number(form.valor.replace(/[^\w\s]|\s|[A-Z]/gi, "")) == 0) {
+        setErro("O valor da transação não pode ser '0,00'");
+        return;
+      }
+      
       await api.post(
         "/transacao",
         {
           tipo: types,
-          valor: Number(form.valor),
+          valor: Number(form.valor.replace(/[^\w\s]|\s|[A-Z]/gi, "")),
           categoria_id: select.id,
           data: form.data,
           descricao: form.descricao,
@@ -81,7 +90,7 @@ function AddRegister({
     async function listCategories() {
       try {
         const response = await api.get("/categoria", getHeaders(token));
-        setOptions([{id: "sem id", descricao: "", nome: ""}, ...response.data]);
+        setOptions([...options, ...response.data]);
       } catch (error) {
         setErro(error.response.data.mensagem);
       }
@@ -126,8 +135,8 @@ function AddRegister({
             <label>Valor</label>
             <input
               name="valor"
-              type="number"
-              value={form.valor}
+              placeholder="0,00"
+              value={money(form.valor)}
               onChange={handleChangeInputValue}
             />
           </div>
@@ -158,6 +167,7 @@ function AddRegister({
             <input
               name="descricao"
               type="text"
+              placeholder="Detalhes da transação"
               value={form.descricao}
               onChange={handleChangeInputValue}
             />

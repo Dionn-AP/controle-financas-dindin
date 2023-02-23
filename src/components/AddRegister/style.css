@@ -52,6 +52,10 @@
     all: unset;
 }
 
+.form-add-register-into input:placeholder {
+    color: rgba(0, 0, 0, 0.4)
+}
+
 .form-add-register-into label {
     font-weight: 500;
     font-size: 1.8rem;

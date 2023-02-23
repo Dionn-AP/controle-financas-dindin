@@ -66,7 +66,7 @@ function AddCategorie({ setOpenAddCat, setAlertSuccessfullDelete, setOpen }) {
         getHeaders(token)
       );
       setOpen(true);
-      setAlertSuccessfullDelete("Nova Categoria adicionada com sucesso")
+      setAlertSuccessfullDelete("Nova Categoria adicionada com sucesso");
       arrayNewCategorie.push(response.data);
       setNewCategorie([...newCategorie, response.data]);
       setLoadingProgress(false);
@@ -74,7 +74,7 @@ function AddCategorie({ setOpenAddCat, setAlertSuccessfullDelete, setOpen }) {
       setTextAreaDescription("");
     } catch (error) {
       setLoadingProgress(false);
-      return
+      return;
     }
   }
 
@@ -130,17 +130,19 @@ function AddCategorie({ setOpenAddCat, setAlertSuccessfullDelete, setOpen }) {
             alt="close button"
             onClick={() => closedModalDelete()}
           />
-          <div className="box-modal-delete-categorie">
-            <h3>Deseja realmente excluir essa categoria?</h3>
-            <div className="buttons-yes-no">
-              <button onClick={() => deleteCategorie()} className="btn-yes">
-                Sim
-              </button>
-              <button onClick={() => closedModalDelete()} className="btn-no">
-                Não
-              </button>
+          {!errorDelete && (
+            <div className="box-modal-delete-categorie">
+              <h3>Deseja realmente excluir essa categoria?</h3>
+              <div className="buttons-yes-no">
+                <button onClick={() => deleteCategorie()} className="btn-yes">
+                  Sim
+                </button>
+                <button onClick={() => closedModalDelete()} className="btn-no">
+                  Não
+                </button>
+              </div>
             </div>
-          </div>
+          )}
           <div className="box-error">
             {loadinDelete && (
               <div className="progess-loading">

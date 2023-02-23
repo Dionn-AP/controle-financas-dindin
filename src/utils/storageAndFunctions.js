@@ -15,10 +15,11 @@ export function clear() {
 }
 
 export function convertValues(value) {
+  const newValue = value / 100;
   return Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL'
-  }).format(value)
+  }).format(newValue)
 };
 
 export function getHeaders(iToken) {
@@ -56,6 +57,26 @@ function formatEditDate(date) {
   return date.slice(0, date.indexOf('T'));
 }
 
+function money(value) {
+    value = String(value).replace(/^(0+)/g, "")
+    value = value.replace(/[^\w\s]|\s|[A-Z]/gi, '')
+    var len = value.length;
+    if(len === 1) {
+      value = value.replace(/(\d)/, "0,0$1")
+      return value;
+    }
+
+    if(len === 2) {
+      value = value.replace(/(\d)/, "0,$1")
+      return value;
+    }
+
+    if(len > 2) {
+      value = value.replace(/(\d{2})$/, ',$1')
+      return value;
+    }
+}
+
 export function convertDate(value) {
   return Intl.DateTimeFormat(['ban', 'id']).format(value)
 };
@@ -71,7 +92,10 @@ export function convertDayOfWeek(value) {
       .toLocaleLowerCase();
 };
 
+
+
 export {
   dateFormat,
-  formatEditDate
+  formatEditDate,
+  money
 }
