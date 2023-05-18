@@ -8,6 +8,7 @@ import { setItem } from '../../utils/storageAndFunctions';
 import InputPassword from '../../components/TextFildPassword/TextFildPass';
 import InputEmail from '../../components/TextFildEmail/TextFildEmail';
 import SingleProgess from '../../components/SingleProgress';
+import * as Sentry from "@sentry/react";
 
 let opacityCard = '1';
 
@@ -56,13 +57,11 @@ function SignIn() {
                 }, 1500)
             }
         } catch (error) {
+            Sentry.captureException(error)
             setSuccessfull(false);
             opacityCard = "1";
             if (error.response.data.mensagem) {
                 return setErro(error.response.data.mensagem);
-            }
-            else if (error.response.data) {
-                return setErro("Falha de comunicação com o servidor");
             }
         }
     }
@@ -130,4 +129,4 @@ function SignIn() {
     )
 };
 
-export default SignIn;
+export default Sentry.withProfiler(SignIn);
