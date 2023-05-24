@@ -1,4 +1,5 @@
 import "./style.css";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Background from "../../assets/background.svg";
 import Logo from "../../assets/logo.svg";
@@ -8,7 +9,6 @@ import { useState } from "react";
 import InputPassword from "../../components/TextFildPassword/TextFildPass";
 import InputEmailOrName from "../../components/TextFildEmail/TextFildEmail";
 import AlertMessage from "../../components/Alert";
-import * as Sentry from "@sentry/react";
 
 function SignUp() {
   const [open, setOpen] = useState(false);
@@ -54,11 +54,10 @@ function SignUp() {
         navigate("/sign-in");
       }, 5000);
     } catch (error) {
-      Sentry.captureException(error)
       if (error.response.data.mensagem) {
         return setErro(error.response.data.mensagem);
       } else if (error.response.data) {
-        const erro = messaErroTreatment(error.response.data);
+        const erro = messaErroTreatment("Erro de conexão com o servidor");
         return setErro(erro);
       }
     }
@@ -125,4 +124,5 @@ function SignUp() {
   );
 }
 
-export default Sentry.withProfiler(SignUp);
+export default SignUp;
+

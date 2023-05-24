@@ -57,12 +57,13 @@ function SignIn() {
                 }, 1500)
             }
         } catch (error) {
-            Sentry.captureException(error)
             setSuccessfull(false);
             opacityCard = "1";
             if (error.response.data.mensagem) {
                 return setErro(error.response.data.mensagem);
-            }
+            } else if (error.response.data) {
+                return setErro("Erro de conexão com o servidor.");
+              }
         }
     }
 
@@ -129,4 +130,4 @@ function SignIn() {
     )
 };
 
-export default Sentry.withProfiler(SignIn);
+export default SignIn;

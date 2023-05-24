@@ -59,7 +59,7 @@ function AddRegister({
         setErro("O valor da transação não pode ser '0,00'");
         return;
       }
-      
+
       await api.post(
         "/transacao",
         {
