@@ -8,7 +8,6 @@ import { setItem } from '../../utils/storageAndFunctions';
 import InputPassword from '../../components/TextFildPassword/TextFildPass';
 import InputEmail from '../../components/TextFildEmail/TextFildEmail';
 import SingleProgess from '../../components/SingleProgress';
-import * as Sentry from "@sentry/react";
 
 let opacityCard = '1';
 
