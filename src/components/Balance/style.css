@@ -73,6 +73,11 @@
     border-radius: .5rem;
     padding: 1.5rem 4.5rem;
     cursor: pointer;
+    transition: background-color ease .3s;
+}
+
+.add-register:hover {
+    background-color: rgba(121, 120, 217, .9);
 }
 
 #btn-pdf-resume {

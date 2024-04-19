@@ -1,9 +1,8 @@
 import './style.css';
 import { convertValues } from '../../utils/storageAndFunctions';
-import transactionPdf from '../../services/Clients/transactionReportsPdf';
 import { BsFillFileEarmarkPdfFill } from 'react-icons/bs';
 
-function Balance({ setShowRegister, balance, transactions }) {
+function Balance({ setShowRegister, balance, handleRelatorioClick }) {
     const stylePdf = {
         color: '#e90404e6',
         backgroundColor: '#FAFAFA !important',
@@ -30,10 +29,10 @@ function Balance({ setShowRegister, balance, transactions }) {
                 </div>
                 <button
                     id='btn-pdf-resume'
+                    onClick={handleRelatorioClick}
                 >
                     <BsFillFileEarmarkPdfFill
                         style={stylePdf}
-                        onClick={(e) => transactionPdf(transactions, balance)}
                     />
                 </button>
             </div>

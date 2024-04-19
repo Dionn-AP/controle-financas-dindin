@@ -18,7 +18,6 @@ import BoxFilters from "../../components/BoxFilters";
 import MiniMenu from "../../components/MiniMenu/MiniMenu";
 import CardDetailTransaction from "../../components/CardDetailTransaction/CardDetailTransaction";
 import { useLocation } from "react-router-dom";
-import transactionPdf from "../../services/Clients/transactionReportsPdf";
 import AlertMessage from "../../components/Alert";
 
 function Home() {
@@ -114,6 +113,34 @@ function Home() {
   const onTop = () => {
     window.scrollTo(0, 0);
   };
+
+  const handleRelatorioClick = async () => {
+    try {
+        const response = await api.get('/relatorio', {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                Accept: 'application/pdf',
+            },
+            responseType: 'arraybuffer',
+        });
+
+        if (response.data && response.data.byteLength > 0) {
+            // Criar um blob com os dados do PDF
+            const blob = new Blob([response.data], { type: 'application/pdf' });
+
+            // Criar um URL para o blob
+            const url = window.URL.createObjectURL(blob);
+
+            // Abrir o URL em uma nova guia do navegador
+            window.open(url, '_blank');
+        } else {
+            console.error('Dados do PDF vazios ou inválidos.');
+        }
+    } catch (error) {
+        console.error('Erro ao gerar relatório:', error);
+    }
+};
+
 
   useEffect(() => {
     loadBalance();
@@ -228,6 +255,7 @@ function Home() {
             balance={balance}
             transactions={transactions}
             setShowRegister={setShowRegister}
+            onClick={handleRelatorioClick}
           />
         </div>
         <div className="container-table-abstract">
@@ -250,7 +278,7 @@ function Home() {
             </button>
           </div>
           <button
-            onClick={(e) => transactionPdf(transactions, balance)}
+            onClick={handleRelatorioClick}
             className="btn-pdf"
           >
             <img
@@ -267,7 +295,11 @@ function Home() {
           <div className="container-table">
             {openResumeCard && (
               <div className="show-card-abstract">
-                <Balance balance={balance} setShowRegister={setShowRegister} />
+                <Balance 
+                  balance={balance} 
+                  setShowRegister={setShowRegister} 
+                  handleRelatorioClick={handleRelatorioClick}
+                />
               </div>
             )}
             {openFilters && (
@@ -294,7 +326,7 @@ function Home() {
             />
           </div>
           <div className="card-abstract">
-            <Balance balance={balance} setShowRegister={setShowRegister} />
+            <Balance balance={balance} setShowRegister={setShowRegister} handleRelatorioClick={handleRelatorioClick} />
           </div>
         </div>
       </div>
