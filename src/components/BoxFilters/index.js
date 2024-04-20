@@ -12,10 +12,12 @@ function BoxFilters({
   setOpenAddCat,
   setOpenFilters,
   setMessageSearchFilter,
+  containerRef
 }) {
   const token = getItem("token");
   const [btnActive, setBtnActive] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [accordion, setaccordion] = useState(false);
 
   let wordsFilter = "filtro[]=";
 
@@ -26,6 +28,7 @@ function BoxFilters({
     try {
       const response = await api.get("/categoria", getHeaders(token));
       const resultResponse = [...response.data];
+      setaccordion(true);
       // eslint-disable-next-line
       resultResponse.map((item) => {
         arrayCategories.push({
@@ -113,7 +116,7 @@ function BoxFilters({
   }, []);
 
   return (
-    <div className="container-filter">
+    <div ref={containerRef} className={`container-filter ${accordion ? 'open' : '' }`}>
       {loading && (
         <div className="progess-loading">
           <SingleProgess />

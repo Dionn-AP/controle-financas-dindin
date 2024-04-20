@@ -143,6 +143,15 @@ span.content-table-value {
     border-radius: 10px;
     border: 1.5px solid #ececec;
   }
+
+  .table::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .table::-webkit-scrollbar-thumb {
+    background-color: #a7a4a4;
+    border-radius: 5px;
+  }
 }
 
 @media (max-width: 540px) {

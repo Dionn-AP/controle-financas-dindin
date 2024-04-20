@@ -6,7 +6,7 @@ import ImageLogout from "../../assets/button-logout.svg";
 import Filter from "../../assets/icon-filter.svg";
 import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { clear, getItem, getHeaders } from "../../utils/storageAndFunctions";
 import AddCategorie from "../../components/AddCategorie";
 import AddRegister from "../../components/AddRegister";
@@ -38,6 +38,7 @@ function Home() {
   const [detailTransaction, setDetailTransaction] = useState([]);
   const [alertSuccessfullDelete, setAlertSuccessfullDelete] = useState("");
   const [open, setOpen] = useState(false);
+  const containerRef = useRef(null);
 
   const dayOfWeek = [
     "Domingo",
@@ -310,6 +311,7 @@ function Home() {
                 setTransactions={setTransactions}
                 setOpenAddCat={setOpenAddCat}
                 setFilter={setFilter}
+                useRefClass={containerRef}
               />
             )}
             <Table

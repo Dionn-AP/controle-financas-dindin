@@ -38,7 +38,7 @@ function SignUp() {
         setErro("As senhas precisam ser iguais.");
         return;
       }
-      if (form.senha && !form.contrasenha.trim().length) {
+      if (form.senha.trim() && !form.contrasenha.trim().length) {
         setErro("Você precisa confirmar a senha.");
         return;
       }
